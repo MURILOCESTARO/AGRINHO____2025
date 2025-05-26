@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Campo e Cidade - Um Mundo de Contrastes e Conexões</title>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap');
+
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        margin: 0;
+        font-family: 'Poppins', sans-serif;
+        background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+        color: #333;
+        line-height: 1.6;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+    }
+
+    header {
+        background: #005f73;
+        color: #fff;
+        padding: 2rem 1rem;
+        text-align: center;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    }
+    header h1 {
+        margin: 0 0 0.25rem;
+        font-weight: 600;
+        font-size: 2.5rem;
+        letter-spacing: 1.5px;
+    }
+    header p {
+        margin: 0;
+        font-weight: 300;
+        font-size: 1.1rem;
+    }
+
+    main {
+        flex-grow: 1;
+        max-width: 900px;
+        margin: 2rem auto;
+        padding: 0 1rem;
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
+
+    .tabs {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 1rem;
+        border-bottom: 2px solid #e0e0e0;
+    }
+    .tab {
+        flex: 1;
+        padding: 0.8rem 1.2rem;
+        text-align: center;
+        cursor: pointer;
+        font-weight: 600;
+        color: #005f73;
+        background: #dbe9e9;
+        transition: background-color 0.3s ease, color 0.3s ease;
+        user-select: none;
+        border-radius: 8px 8px 0 0;
+        margin: 0 0.5rem;
+    }
+    .tab.active {
+        background: #005f73;
+        color: white;
+        box-shadow: inset 0 -4px 0 #0a9396;
+    }
+    .tab:hover:not(.active) {
+        background: #73c2c2;
+        color: white;
+    }
+
+    .content-section {
+        padding: 1.5rem;
+        animation: fadeIn 0.6s ease forwards;
+        opacity: 0;
+        display: none;
+    }
+    .content-section.active {
+        display: block;
+        opacity: 1;
+    }
+
+    h2 {
+        color: #0a9396;
+        font-weight: 600;
+        margin-top: 0;
+        margin-bottom: 1rem;
+        font-size: 1.8rem;
+        border-bottom: 2px solid #b2dedf;
+        padding-bottom: 0.3rem;
+    }
+
+    p {
+        margin-bottom: 1rem;
+        font-size: 1rem;
+    }
+
+    img {
+        max-width: 100%;
+        border-radius: 10px;
+        margin: 1rem 0;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+        object-fit: cover;
+        height: 200px;
+    }
+
+    .highlight {
+        background: #caf0f8;
+        padding: 0.3rem 0.6rem;
+        border-radius: 6px;
+        font-weight: 600;
+        color: #0077b6;
+    }
+
+    footer {
+        background: #005f73;
+        color: white;
+        text-align: center;
+        padding: 1rem;
+        font-size: 0.9rem;
+        box-shadow: 0 -4px 8px rgba(0,0,0,0.15);
+    }
+
+    @keyframes fadeIn {
+        to {opacity: 1;}
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+        header h1 {
+            font-size: 2rem;
+        }
+        main {
+            margin: 1rem;
+            padding: 1rem;
+        }
+        .tab {
+            font-size: 0.9rem;
+            margin: 0 0.25rem;
+            padding: 0.6rem 0.8rem;
+        }
+        img {
+            height: 150px;
+        }
+    }
+</style>
+</head>
+<body>
+
+<header>
+    <h1>Campo & Cidade</h1>
+    <p>Descubra as conexões e contrastes entre a vida no campo e na cidade</p>
+</header>
+
+<main>
+    <nav class="tabs" role="tablist" aria-label="Seções sobre Campo e Cidade">
+        <div class="tab active" role="tab" tabindex="0" aria-selected="true" aria-controls="campo" id="tab-campo">Campo</div>
+        <div class="tab" role="tab" tabindex="-1" aria-selected="false" aria-controls="cidade" id="tab-cidade">Cidade</div>
+        <div class="tab" role="tab" tabindex="-1" aria-selected="false" aria-controls="conexao" id="tab-conexao">Conexão</div>
+    </nav>
+
+    <section id="campo" class="content-section active" role="tabpanel" aria-labelledby="tab-campo">
+        <h2>A Vida no Campo</h2>
+        <p>A vida no <span class="highlight">campo</span> tem um ritmo mais tranquilo, rodeada pela natureza, espaço aberto e ar puro. É o local onde a conexão com o meio ambiente é mais íntima, valorizando o cultivo da terra, criação de animais e tradições rurais.</p>
+        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=60" alt="Paisagem do campo com montanhas e pasto"/>
+        <p>O campo oferece qualidade de vida, menor poluição sonora e visual, e um contato direto com a flora e fauna local. Muitas pessoas procuram o campo para encontrar paz e fugir do estresse urbano.</p>
+        <p>Desafios do campo incluem menos acesso a serviços, infraestrutura limitada e oportunidades de emprego menos diversificadas.</p>
+    </section>
+
+    <section id="cidade" class="content-section" role="tabpanel" aria-labelledby="tab-cidade" tabindex="0" hidden>
+        <h2>A Vida na Cidade</h2>
+        <p>A <span class="highlight">cidade</span> é a expressão máxima do desenvolvimento humano, com infraestrutura, tecnologia, cultura e diversidade em grande escala. As cidades são centros de oportunidades, vida social intensa, serviços e inovação.</p>
+        <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=800&q=60" alt="Vista aérea de cidade grande à noite" />
+        <p>A vida na cidade é dinâmica, com acesso fácil a restaurantes, teatros, escolas, hospitais e linhas de transporte público. É o ambiente ideal para quem busca crescimento profissional e social.</p>
+        <p>Contudo, a cidade traz desafios como poluição, trânsito e ritmo acelerado que pode gerar estresse.</p>
+    </section>
+
+    <section id="conexao" class="content-section" role="tabpanel" aria-labelledby="tab-conexao" tabindex="0" hidden>
+        <h2>A Conexão entre Campo e Cidade</h2>
+        <p>Apesar das diferenças, <span class="highlight">campo e cidade</span> são complementares e interligados. O campo fornece alimentos, recursos naturais e espaço para lazer, enquanto a cidade é um centro de serviços e tecnologia que atende às necessidades urbanas.</p>
+        <img src="https://images.unsplash.com/photo-1562007905-cbd6dde88a3a?auto=format&fit=crop&w=800&q=60" alt="Campo e cidade ao pôr do sol" />
+        <p>A interação entre campo e cidade pode ser vista nos hábitos culturais, na economia e no meio ambiente.</p>
+        <p>O desenvolvimento sustentável depende do equilíbrio entre preservação do campo e expansão consciente das cidades.</p>
+    </section>
+</main>
+
+<footer>
+    <p>© 2024 Campo & Cidade - Murilo da Pecuária.</p>
+</footer>
+
+<script>
+    const tabs = document.querySelectorAll('.tab');
+    const sections = document.querySelectorAll('.content-section');
+
+    tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            switchTab(tab);
+        });
+        tab.addEventListener('keydown', e => {
+            if(e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
+                let index = Array.from(tabs).indexOf(document.activeElement);
+                if(e.key === 'ArrowRight') {
+                    index = (index + 1) % tabs.length;
+                } else if(e.key === 'ArrowLeft') {
+                    index = (index - 1 + tabs.length) % tabs.length;
+                }
+                tabs[index].focus();
+                switchTab(tabs[index]);
+                e.preventDefault();
+            }
+        });
+    });
+
+    function switchTab(selectedTab){
+        tabs.forEach(tab => {
+            tab.classList.remove('active');
+            tab.setAttribute('aria-selected', 'false');
+            tab.tabIndex = -1;
+        });
+        selectedTab.classList.add('active');
+        selectedTab.setAttribute('aria-selected', 'true');
+        selectedTab.tabIndex = 0;
+
+        const target = selectedTab.getAttribute('aria-controls');
+        sections.forEach(section => {
+            if(section.id === target){
+                section.classList.add('active');
+                section.removeAttribute('hidden');
+            } else {
+                section.classList.remove('active');
+                section.setAttribute('hidden', '');
+            }
+        });
+    }
+</script>
+
+</body>
+</html>
+
